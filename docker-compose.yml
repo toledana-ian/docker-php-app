@@ -23,7 +23,7 @@ services:
       dockerfile: ./docker/config/php/Dockerfile
     volumes:
       - ./application/:/var/www/application/
-      - ./docker/config/php/php.ini-production:/usr/local/etc/php/php.ini
+      - ./docker/config/php/php.ini-development:/usr/local/etc/php/php.ini
     networks:
       - internal
 
