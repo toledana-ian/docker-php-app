@@ -22,8 +22,9 @@ services:
       context: ./
       dockerfile: ./docker/config/php/Dockerfile
     volumes:
-      - ./application/:/var/www/application/
+      - ./docker/config/php/init.sh:/var/www/init.sh
       - ./docker/config/php/php.ini-development:/usr/local/etc/php/php.ini
+      - ./application/:/var/www/application/
     networks:
       - internal
 

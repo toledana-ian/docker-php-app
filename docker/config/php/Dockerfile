@@ -8,6 +8,7 @@ RUN apk add build-base bash curl
 RUN apk add libpq-dev
 RUN apk add libxml2-dev
 RUN apk add icu-dev
+RUN apk add unzip
 
 RUN docker-php-ext-install calendar
 RUN docker-php-ext-install intl
@@ -21,6 +22,6 @@ RUN alias composer='php /usr/bin/composer'
 
 RUN composer self-update --2
 
-CMD ["bash", "./docker/config/php/init.sh"]
+CMD ["bash", "/var/www/init.sh"]
 
 EXPOSE 9000

@@ -1,1 +1,3 @@
+composer install
+
 php-fpm
