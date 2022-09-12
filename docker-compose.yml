@@ -27,7 +27,10 @@ services:
       - ./docker/config/php/php.ini-development:/usr/local/etc/php/php.ini
       - ./docker/config/php/www.conf:/usr/local/etc/php/www.conf
       - ./docker/log/php/:/var/log/
-      - ./application/:/var/www/application/
+      - ./application/:/var/www/application/:cache
+      - /var/www/application/var/cache
+      - /var/www/application/vendor
+    tty: true
     networks:
       - internal
 
